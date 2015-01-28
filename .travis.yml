@@ -1,0 +1,14 @@
+language: cpp
+compiler:
+  - gcc
+before_install:
+  - sudo pip install cpp-coveralls
+  - sudo apt-get install -y uuid-dev libzmq3-dev cmake ruby-ronn
+before_script:
+  - mkdir build
+  - cd build
+  - cmake .. -DCMAKE_BUILD_TYPE=Profile
+script:
+  - make
+after_success:
+  - coveralls --exclude lib --exclude tests --gcov-options '\-lp'
