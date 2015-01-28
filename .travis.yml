@@ -6,7 +6,15 @@ before_install:
   - sudo apt-get update -qq
 install:
   - sudo pip install cpp-coveralls
-  - sudo apt-get install -y uuid-dev libzmq3-dev cmake ruby-ronn gcc-4.8 g++-4.8
+  - sudo apt-get install -y uuid-dev \
+                            libzmq3-dev \
+                            cmake \
+                            ruby-ronn \
+                            libprotobuf-dev \
+                            protobuf-compiler \
+                            libczmq-dev \
+                            gcc-4.8 \
+                            g++-4.8
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 90
 before_script:
   - mkdir build
