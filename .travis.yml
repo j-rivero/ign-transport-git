@@ -16,6 +16,6 @@ before_script:
   - cmake .. -DCMAKE_BUILD_TYPE=Profile
 script:
   - make
-  - make test
-after_success:
+  - make test ARGS="-VV"
+after_script:
   - coveralls --exclude lib --exclude tests --gcov-options '\-lp'
