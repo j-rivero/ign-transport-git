@@ -13,7 +13,7 @@ install:
 before_script:
   - mkdir build
   - cd build
-  - cmake .. -DCMAKE_BUILD_TYPE=Profile
+  - cmake .. -DCMAKE_BUILD_TYPE=Coverage
 script:
   - make
   - make test ARGS="-VV"
