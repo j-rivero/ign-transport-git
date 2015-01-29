@@ -18,4 +18,4 @@ script:
   - make
   - make test ARGS="-VV"
 after_script:
-  - coveralls --exclude lib --exclude tests --gcov-options '\-lp'
+    - coveralls --exclude-pattern '.*CMake[^/]+\.c(?:pp)?' --exclude test
