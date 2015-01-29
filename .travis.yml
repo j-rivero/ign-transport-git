@@ -19,4 +19,4 @@ script:
   - make test ARGS="-VV"
 after_script:
     #    - coveralls --exclude-pattern '.*CMake[^/]+\.c(?:pp)?' --exclude test
-         - coveralls --include src/ --include include/--exclude test/ --exclude tools/
+         - coveralls --include src --include include --exclude test --exclude tools
